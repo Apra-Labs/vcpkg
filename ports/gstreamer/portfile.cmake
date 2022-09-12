@@ -88,7 +88,7 @@ vcpkg_add_to_path(PREPEND ${GLIB_TOOL_DIR})
 
 if("plugins-bad" IN_LIST FEATURES)
     # requires 'libdrm', 'dssim', 'libmicrodns'
-    message(FATAL_ERROR "The feature 'plugins-bad' is not supported in this port version")
+    # message(FATAL_ERROR "The feature 'plugins-bad' is not supported in this port version")
     set(PLUGIN_BAD_SUPPORT enabled)
 else()
     set(PLUGIN_BAD_SUPPORT disabled)
@@ -167,8 +167,11 @@ vcpkg_configure_meson(
         -Dgst-plugins-bad:examples=disabled
         -Dgst-plugins-bad:tests=disabled
         -Dgst-plugins-bad:introspection=disabled
-        -Dgst-plugins-bad:nls=${LIBRARY_LINKAGE}
+        -Dgst-plugins-bad:nls=disabled
         -Dgst-plugins-bad:orc=disabled
+        -Dgst-plugins-bad:d3d11=disabled
+        -Dgst-plugins-bad:mediafoundation=disabled
+        -Dgst-plugins-bad:wasapi2=disabled
         # gst-plugins-ugly
         -Dugly=${PLUGIN_UGLY_SUPPORT}
         -Dgst-plugins-ugly:default_library=${LIBRARY_LINKAGE}
