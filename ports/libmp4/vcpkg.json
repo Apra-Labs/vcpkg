@@ -1,0 +1,7 @@
+{
+  "name": "libmp4",
+  "version-string": "1.0.0",
+  "homepage": "https://github.com/Parrot-Developers/libmp4",
+  "description": "libmp4 is a C library to handle MP4 files (ISO base media file format, see ISO/IEC 14496-12)",
+  "dependencies": []
+}
