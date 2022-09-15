@@ -172,6 +172,10 @@ vcpkg_configure_meson(
         -Dgst-plugins-bad:d3d11=disabled
         -Dgst-plugins-bad:mediafoundation=disabled
         -Dgst-plugins-bad:wasapi2=disabled
+        -Dgst-plugins-bad:openal=disabled
+        -Dgst-plugins-bad:openjpeg=disabled
+        -Dgst-plugins-bad:webp=disabled
+        -Dgst-plugins-bad:zxing=disabled
         # gst-plugins-ugly
         -Dugly=${PLUGIN_UGLY_SUPPORT}
         -Dgst-plugins-ugly:default_library=${LIBRARY_LINKAGE}
