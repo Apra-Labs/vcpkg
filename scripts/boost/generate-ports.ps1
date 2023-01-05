@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param (
     $libraries = @(),
-    $version = "1.80.0",
+    $version = "1.81.0",
     $portsDir = $null
 )
 
@@ -24,6 +24,7 @@ else {
 # Clear this array when moving to a new boost version
 $portVersions = @{
     #e.g. "boost-asio" = 1;
+    "boost-locale" = 1;
 }
 
 $portData = @{
@@ -45,7 +46,7 @@ $portData = @{
     };
     "boost-beast"            = @{ "supports" = "!emscripten" };
     "boost-fiber"            = @{
-        "supports" = "!osx & !uwp & !arm & !emscripten";
+        "supports" = "!uwp & !arm & !emscripten";
         "features" = @{
             "numa" = @{
                 "description" = "Enable NUMA support";
@@ -77,7 +78,7 @@ $portData = @{
     };
     "boost-context"          = @{ "supports" = "!uwp & !emscripten" };
     "boost-stacktrace"       = @{ "supports" = "!uwp" };
-    "boost-coroutine"        = @{ "supports" = "!arm & !uwp & !emscripten" };
+    "boost-coroutine"        = @{ "supports" = "!(arm & windows) & !uwp & !emscripten" };
     "boost-coroutine2"       = @{ "supports" = "!emscripten" };
     "boost-test"             = @{ "supports" = "!uwp" };
     "boost-wave"             = @{ "supports" = "!uwp" };
@@ -162,6 +163,41 @@ function GeneratePortDependency() {
     }
 }
 
+function MakePortVersionString() {
+    param (
+        [string]$PortName
+    )
+    if ($portVersions.Contains($PortName)) {
+        return $version + '#' + $portVersions[$PortName]
+    }
+    return $version
+}
+
+function AddBoostVersionConstraints() {
+    param (
+        $Dependencies = @()
+    )
+
+    $updated_dependencies = @()
+    foreach ($dependency in $Dependencies) {
+        if ($dependency.Contains("name")) {
+            if ($dependency.name.StartsWith("boost")) {
+                $dependency["version>="] = MakePortVersionString $dependency.name
+            }
+        }
+        else {
+            if ($dependency.StartsWith("boost")) {
+                $dependency = @{
+                    "name"       = $dependency
+                    "version>="  = MakePortVersionString $dependency
+                }
+            }
+        }
+        $updated_dependencies += $dependency
+    }
+    $updated_dependencies
+}
+
 function GeneratePortManifest() {
     param (
         [string]$PortName,
@@ -171,6 +207,7 @@ function GeneratePortManifest() {
         $Dependencies = @()
     )
     $manifest = @{
+        "`$comment"     = "When changing this file also update and run scripts/boost/generate-ports.ps1"
         "name"          = $PortName
         "version"       = $version
         "homepage"      = $Homepage
@@ -209,6 +246,12 @@ function GeneratePortManifest() {
                 }
             }
         }
+    }
+
+    # Add version constraints to boost dependencies
+    $manifest["dependencies"] = @(AddBoostVersionConstraints $manifest["dependencies"])
+    foreach ($feature in $manifest.features.Keys) {
+        $manifest.features.$feature["dependencies"] = @(AddBoostVersionConstraints $manifest.features.$feature["dependencies"])
     }
 
     $manifest | ConvertTo-Json -Depth 10 -Compress `

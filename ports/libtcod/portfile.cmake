@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO libtcod/libtcod
-    REF 1.22.1
-    SHA512 75fd804f4c970da6ffc084c896ab5e6d76527bf4e20d471ee50ac4e186e94e5a8dc8b68757f9bb46667147e2d3b2925f111749d3c865f3e82765b9de88d21e90
+    REF 1.23.1
+    SHA512 d01e168b02c0540e193f65ad630180b26ac1690b9386aac039149493f436938fed4a0499ac70235f53d2675df595b7223401804b3bd2d8660917020e911f12c9
     HEAD_REF main
 )
 
@@ -10,8 +10,9 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     INVERTED_FEATURES
         "png" CMAKE_DISABLE_FIND_PACKAGE_lodepng-c
         "sdl" CMAKE_DISABLE_FIND_PACKAGE_SDL2
-        "sdl" CMAKE_DISABLE_FIND_PACKAGE_GLAD
         "threads" CMAKE_DISABLE_FIND_PACKAGE_Threads
+        "unicode" CMAKE_DISABLE_FIND_PACKAGE_utf8proc
+        "unicode" CMAKE_DISABLE_FIND_PACKAGE_unofficial-utf8proc
         "zlib" CMAKE_DISABLE_FIND_PACKAGE_ZLIB
 )
 
@@ -22,7 +23,6 @@ vcpkg_cmake_configure(
         -DCMAKE_INSTALL_INCLUDEDIR=${CURRENT_PACKAGES_DIR}/include
         -DLIBTCOD_SDL2=find_package
         -DLIBTCOD_ZLIB=find_package
-        -DLIBTCOD_GLAD=find_package
         -DLIBTCOD_LODEPNG=find_package
         -DLIBTCOD_UTF8PROC=vcpkg
         -DLIBTCOD_STB=find_package
