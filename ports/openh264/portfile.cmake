@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO cisco/openh264
-    REF f15f940425eebf24ce66984db2445733cf500b7b
-    SHA512 361003296e9cef2956aeff76ae4df7a949a585710facd84a92c1b4164c5a4522d6615fcc485ebc2e50be8a13feb942b870efdd28837307467081cb1eba1f17d2
+    REF c7310e16dee24775f8fa4a0a813c72b46879e4fb
+    SHA512 d83e6494f791a63bebdc35072a9b8bb2812433d281df018aaf2d5fb2b41f58ad3f9d9bf3cc6c11f7d9c8d70576c0e4ce4de12f2125e14441e3a57c83de8e9d4f
     PATCHES
         0001-respect-default-library-option.patch  # https://github.com/cisco/openh264/pull/3351
 )
