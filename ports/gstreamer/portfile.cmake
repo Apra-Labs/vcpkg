@@ -19,7 +19,7 @@ vcpkg_from_gitlab(
         fix-clang-cl-bad.patch
         fix-clang-cl-ugly.patch
         gstreamer-disable-no-unused.patch
-        srtp_fix.patch
+        # srtp_fix.patch
         ${PATCHES}
 )
 
