@@ -173,8 +173,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv libintl
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libtool-2.4.6-9-x86_64.pkg.tar.xz"
-        SHA512 b309799e5a9d248ef66eaf11a0bd21bf4e8b9bd5c677c627ec83fa760ce9f0b54ddf1b62cbb436e641fbbde71e3b61cb71ff541d866f8ca7717a3a0dbeb00ebf
+        URL "https://repo.msys2.org/msys/x86_64/libtool-2.4.6-11-x86_64.pkg.tar.zst"
+        SHA512 143ef494cef2efbc52aeb4940d9bbe2ffa8c3c674d3d25d65e47dbbebd59d62c07fe5ff3859a46ec53a9449bb87777661e668597ff4aef68207cf017c6f7b79d
         DEPS grep sed coreutils file findutils
     )
     z_vcpkg_acquire_msys_declare_package(
