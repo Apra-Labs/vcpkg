@@ -1,3 +1,4 @@
+set(ENV{CUDA_BIN_PATH} "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2/bin")
 function(vcpkg_find_cuda)
     cmake_parse_arguments(PARSE_ARGV 0 vfc "" "OUT_CUDA_TOOLKIT_ROOT;OUT_CUDA_VERSION" "")
 
