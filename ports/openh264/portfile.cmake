@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO Apra-labs/openh264
-    REF c7310e16dee24775f8fa4a0a813c72b46879e4fb
-    SHA512 d83e6494f791a63bebdc35072a9b8bb2812433d281df018aaf2d5fb2b41f58ad3f9d9bf3cc6c11f7d9c8d70576c0e4ce4de12f2125e14441e3a57c83de8e9d4f
+    REF 4180b7c3f5a883c4aa6bfc82975995b664aa93dc
+    SHA512 51a2f342f1a3be169581f7bc42ebb5171f5c1bba85d6ca7cd0f5f7c9adb388e172add4005d431100fdb682cee7d4e5d02f1d6a56ad27aaec4eedc418fba37453
     PATCHES
         0001-respect-default-library-option.patch  # https://github.com/cisco/openh264/pull/3351
 )
