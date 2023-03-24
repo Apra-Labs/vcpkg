@@ -5014,7 +5014,7 @@
     },
     "openh264": {
       "baseline": "2023-03-24",
-      "port-version": 6
+      "port-version": 7
     },
     "openigtlink": {
       "baseline": "3.0",
