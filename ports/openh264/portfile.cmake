@@ -25,7 +25,7 @@ vcpkg_configure_meson(
     OPTIONS -Dtests=disabled
 )
 
-# vcpkg_install_meson()
+vcpkg_install_meson()
 vcpkg_copy_pdbs()
 vcpkg_fixup_pkgconfig()
 
