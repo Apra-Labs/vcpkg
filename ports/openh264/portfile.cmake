@@ -1,7 +1,7 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO Apra-Labs/openh264
-    REF 8b188e2fd9de01174ad5bacfaae27bf5ec3d34d3
+    REF 98132844fed973b2043fcc5ec1664d3f612d75ef
     SHA512 0415b60f3f71c318b58004ebbbeb7620b588f24d8612748bb73a0759a6a30d78e1b28979b6ba9c4ba33dc9b2e3d386f30c97dc5fd9b7bd81be626356ab1fff99
     HEAD_REF ForApraPipes
     PATCHES
