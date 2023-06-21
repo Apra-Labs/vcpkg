@@ -33,8 +33,10 @@ string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "dynamic" WITH_CRT_DLL)
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
+        jpeg6 WITH_JPEG6
         jpeg7 WITH_JPEG7
         jpeg8 WITH_JPEG8
+        jpeg9 WITH_JPEG9
 )
 
 vcpkg_cmake_configure(
