@@ -388,6 +388,9 @@
       "baseline": "2.0.0.1",
       "port-version": 0
     },
+    "baresip": {
+      "baseline": "3.2.0"
+    },
     "basisu": {
       "baseline": "1.11",
       "port-version": 5
