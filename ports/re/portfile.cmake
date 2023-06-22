@@ -1,0 +1,42 @@
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH
+  REPO Apra-Labs/re
+  REF 5e516154d4354df8a753849270d235f02e04ac5a
+  SHA512 b6875d8b98a06419619c7338ec53cc6c7078f24c3d5cacceac2ad43f201d8f302cdac14ce394c56e3ebf1b0b1692ea7feac4e58bb934e8923dead9608250e757
+  HEAD_REF main
+)
+
+vcpkg_configure_cmake(
+  SOURCE_PATH "${SOURCE_PATH}"
+  PREFER_NINJA
+)
+
+vcpkg_build_cmake()
+
+vcpkg_install_cmake()
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
+
+# Merge /debug/lib/cmake with /lib/cmake into /share/re
+file(
+  GLOB_RECURSE LIB_CMAKE_FILES
+  "${CURRENT_PACKAGES_DIR}/debug/lib/cmake/*.cmake"
+  "${CURRENT_PACKAGES_DIR}/lib/cmake/*.cmake"
+)
+file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/share/re")
+foreach(CMAKE_FILE ${LIB_CMAKE_FILES})
+  file(
+    INSTALL
+    ${CMAKE_FILE}
+    DESTINATION "${CURRENT_PACKAGES_DIR}/share/re"
+  )
+endforeach()
+
+# Copy the software license to ${CURRENT_PACKAGES_DIR}/share/re/copyright
+file(
+  INSTALL
+  "${SOURCE_PATH}/LICENSE"
+  DESTINATION "${CURRENT_PACKAGES_DIR}/share/re"
+  RENAME copyright
+)
