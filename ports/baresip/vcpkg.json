@@ -5,7 +5,8 @@
   "homepage": "https://github.com/Apra-Labs/baresip",
   "dependencies": [
       {
-        "name": "re"
+        "name": "re",
+        "platform" : "!windows"
       }
   ]
 }
