@@ -18,22 +18,6 @@ vcpkg_install_cmake()
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
 
-# Merge /debug/lib/cmake with /lib/cmake into /share/re
-file(
-  GLOB_RECURSE LIB_CMAKE_FILES
-  "${CURRENT_PACKAGES_DIR}/debug/lib/cmake/*.cmake"
-  "${CURRENT_PACKAGES_DIR}/lib/cmake/*.cmake"
-)
-file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/share/re")
-foreach(CMAKE_FILE ${LIB_CMAKE_FILES})
-  file(
-    INSTALL
-    ${CMAKE_FILE}
-    DESTINATION "${CURRENT_PACKAGES_DIR}/share/re"
-  )
-endforeach()
-
-# Copy the software license to ${CURRENT_PACKAGES_DIR}/share/re/copyright
 file(
   INSTALL
   "${SOURCE_PATH}/LICENSE"
