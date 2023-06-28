@@ -1,4 +1,4 @@
-# Replace the placeholders with the appropriate values for your library
+# portfile.cmake for libmp4
 
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
@@ -17,7 +17,7 @@ vcpkg_build_cmake()
 
 vcpkg_install_cmake()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/share")
 
 

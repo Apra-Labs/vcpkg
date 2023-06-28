@@ -1,11 +1,11 @@
-# Replace the placeholders with the appropriate values for your library
+# portfile.cmake for Baresip
 
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO Apra-Labs/baresip
-  REF 7dc4bf58ec58924e57963f4ca77b56379fa7d307
-  SHA512 51c2fef9cdb8401b68d2759b672a3adb9ab3400482c02a832093938a257016718639cd35629c169ad16da66041bbdd399f8b8437172cf139e5d507db1d72c2ef
-  HEAD_REF main
+  REF 3efe20e1f2898a28fd4f6f9e876ac80a83f10d58
+  SHA512 b1b06eef3b23c3ece8905cb1156afa5440709feb24f6b575eecbf55443ecf8f6e45c9be7d7ee053e522f1efdea76a7b85a34376806d9c7857d3de1c516d2bbb4
+  HEAD_REF forApraPipes
 )
 
 vcpkg_configure_cmake(
@@ -13,21 +13,16 @@ vcpkg_configure_cmake(
   PREFER_NINJA
 )
 
-
-vcpkg_build_cmake(
-)
+vcpkg_build_cmake()
 
 vcpkg_install_cmake()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/share")
 
-
 file(
   INSTALL "${SOURCE_PATH}/LICENSE"
-  DESTINATION "${CURRENT_PACKAGES_DIR}/debug/share/${PORT}"
+  DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
   RENAME license
 )
 
