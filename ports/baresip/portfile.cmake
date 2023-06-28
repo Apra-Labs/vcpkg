@@ -4,7 +4,7 @@ vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO Apra-Labs/baresip
   REF c4614cfb66ae2e5aa4f4a66fef0d12e191ea515b
-  SHA512 e5963c90e165bcc683ff8759f0f8de2892de791a322ddab7810ff409e91454c6549804a1fda2fb04125c39a8da6f9fe556398a56afa35b2c8d4bb268df8f342d
+  SHA512 f0e137bd2f313fa7b1eacd58fdc13c26daa7b212d29afaab4c5641ede5d707eb96fa0f6f38d877d36d6fcaffac81fcae47bad842ce86b6b18546c3431a8d5274
   HEAD_REF forApraPipes
 )
 
