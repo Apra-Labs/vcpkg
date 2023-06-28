@@ -3,7 +3,7 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO Apra-Labs/baresip
-  REF d2c57ccd1b3aef35ef53677a7dfe73a6dc064214
+  REF c4614cfb66ae2e5aa4f4a66fef0d12e191ea515b
   SHA512 e5963c90e165bcc683ff8759f0f8de2892de791a322ddab7810ff409e91454c6549804a1fda2fb04125c39a8da6f9fe556398a56afa35b2c8d4bb268df8f342d
   HEAD_REF forApraPipes
 )
