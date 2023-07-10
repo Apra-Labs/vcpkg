@@ -1,7 +1,7 @@
 {
   "name": "openh264",
-  "version-date": "2023-04-04",
-  "port-version": 4,
+  "version-date": "2023-07-10",
+  "port-version": 5,
   "description": "OpenH264 is a codec library which supports H.264 encoding and decoding. It is suitable for use in real time applications such as WebRTC.",
   "homepage": "https://www.openh264.org/",
   "supports": "!uwp",
