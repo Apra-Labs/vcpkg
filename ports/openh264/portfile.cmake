@@ -6,18 +6,6 @@ vcpkg_from_github(
     HEAD_REF ApraPipesMaster
 )
 
-if((VCPKG_TARGET_ARCHITECTURE STREQUAL "x86" OR VCPKG_TARGET_ARCHITECTURE STREQUAL "x64"))
-    vcpkg_find_acquire_program(NASM)
-    get_filename_component(NASM_EXE_PATH ${NASM} DIRECTORY)
-    vcpkg_add_to_path(${NASM_EXE_PATH})
-elseif(VCPKG_TARGET_IS_WINDOWS)
-    vcpkg_find_acquire_program(GASPREPROCESSOR)
-    foreach(GAS_PATH ${GASPREPROCESSOR})
-        get_filename_component(GAS_ITEM_PATH ${GAS_PATH} DIRECTORY)
-        vcpkg_add_to_path(${GAS_ITEM_PATH})
-    endforeach(GAS_PATH)
-endif()
-
 vcpkg_configure_meson(
     SOURCE_PATH ${SOURCE_PATH}
     OPTIONS -Dtests=disabled
