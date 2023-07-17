@@ -17,8 +17,8 @@ vcpkg_build_cmake()
 
 vcpkg_install_cmake()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/share")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
 
 file(
   INSTALL "${SOURCE_PATH}/LICENSE"
