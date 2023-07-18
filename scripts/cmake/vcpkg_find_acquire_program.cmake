@@ -181,8 +181,9 @@ function(vcpkg_find_acquire_program program)
         set(brew_package_name "nasm")
         set(apt_package_name "nasm")
         set(download_urls
-            "https://www.nasm.us/pub/nasm/releasebuilds/${program_version}/win32/nasm-${program_version}-win32.zip"
-            "https://fossies.org/windows/misc/nasm-${program_version}-win32.zip"
+            #"https://www.nasm.us/pub/nasm/releasebuilds/${program_version}/win32/nasm-${program_version}-win32.zip"
+            #"https://fossies.org/windows/misc/nasm-${program_version}-win32.zip"
+            "https://github.com/microsoft/vcpkg/files/7075269/nasm-2.15.05-win32.zip"
         )
         set(download_filename "nasm-${program_version}-win32.zip")
         set(download_sha512 9412b8caa07e15eac8f500f6f8fab9f038d95dc25e0124b08a80645607cf5761225f98546b52eac7b894420d64f26c3cbf22c19cd286bbe583f7c964256c97ed)
