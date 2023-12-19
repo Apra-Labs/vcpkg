@@ -556,7 +556,7 @@
       "port-version": 0
     },
     "boost-atomic": {
-      "baseline": "1.78f.0",
+      "baseline": "1.78.0",
       "port-version": 0
     },
     "boost-beast": {
