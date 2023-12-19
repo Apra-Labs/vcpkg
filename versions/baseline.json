@@ -1020,7 +1020,7 @@
       "port-version": 0
     },
     "boost-system": {
-      "baseline": "1.74.0",
+      "baseline": "1.78.0",
       "port-version": 0
     },
     "boost-test": {
