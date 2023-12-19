@@ -572,7 +572,7 @@
       "port-version": 0
     },
     "boost-build": {
-      "baseline": "1.75.0",
+      "baseline": "1.78.0",
       "port-version": 0
     },
     "boost-callable-traits": {
