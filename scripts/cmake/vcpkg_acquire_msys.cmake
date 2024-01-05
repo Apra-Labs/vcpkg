@@ -531,8 +531,8 @@ function(vcpkg_acquire_msys out_msys_root)
     )
     z_vcpkg_acquire_msys_declare_package(
         NAME "mingw-w64-x86_64-libwinpthread"
-        URL "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libwinpthread-git-9.0.0.6448.b03cbfb95-1-any.pkg.tar.zst"
-        SHA512 7f0b0cc6b7b52827d3f3838bdc887e26c85a5b5766d664a774c4fb95a135323dd84420864eeb0e5101f737ed2bc839a0aef27d6dfa556cc0ead612124a49c5ef
+        URL "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-11.0.0.r547.g4c8123efb-1-any.pkg.tar.zst"
+        SHA512 6ddd18d4a23954e043863004b3741b3f1dd8f91d2f1b5bb6ffc840b4394d1ed2fc0418e8b3d8be0040f31169c779fcc4949a6847fcc577e6d78af4041bbbd0c1
     )
 
     if(NOT Z_VCPKG_MSYS_PACKAGES STREQUAL "")
