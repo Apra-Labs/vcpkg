@@ -296,8 +296,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS gmp gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/gmp-6.2.1-1-x86_64.pkg.tar.zst"
-        SHA512 c5c8009ef069d05c2209b69c8e87094b09aac4b5c3dfdbea474d8262e55d286b400f1360c6a9778fd5eb87fb76a6463c21188286a1a1919ad79153eae3c44b0f
+        URL "https://repo.msys2.org/msys/x86_64/gmp-6.3.0-1-x86_64.pkg.tar.zst"
+        SHA512 d4e8549e55d4088eca30753f867bf82d9287955209766f488f2a07ecc71bc63ef2c50fcc9d47470ea3b0d2f149f1648d9c2453e366e3eb2c2e2d60939f311a40
     )
     z_vcpkg_acquire_msys_declare_package(
         URL "https://repo.msys2.org/msys/x86_64/xz-5.2.5-1-x86_64.pkg.tar.xz" # this seems to require immediate updating on version bumps.
@@ -319,8 +319,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS msys2-runtime
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/automake1.16-1.16.3-3-any.pkg.tar.zst"
-        SHA512 77a195a9fe8680bee55c04b8ecc0e9ee43e2d89607c745098dfac4687f4f853885cabbb005202d70e9a9cdf9facf6849cc47c6b2f25573b5af8201696d926c72
+        URL "https://repo.msys2.org/msys/x86_64/automake1.16-1.16.5-1-any.pkg.tar.zst"
+        SHA512 62c9dfe28d6f1d60310f49319723862d29fc1a49f7be82513a4bf1e2187ecd4023086faf9914ddb6701c7c1e066ac852c0209db2c058f3865910035372a4840a
         DEPS perl
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -510,8 +510,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS mingw-w64-x86_64-gmp
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gmp-6.2.1-3-any.pkg.tar.zst"
-        SHA512 d0d4ed1a046b64f437e72bbcf722b30311dde5f5e768a520141423fc0a3127b116bd62cfd4b5cf5c01a71ee0f9cf6479fcc31277904652d8f6ddbf16e33e0b72
+        URL "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gmp-6.3.0-2-any.pkg.tar.zst"
+        SHA512 38ab150051d787e44f1c75b3703d6c8deb429d244acb2a973ee232043b708e6c9e29a1f9e28f12e242c136d433e8eb5a5133a4d9ac7b87157a9749a8d215d2f0
     )
     z_vcpkg_acquire_msys_declare_package(
         URL "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-expat-2.4.4-1-any.pkg.tar.zst"
