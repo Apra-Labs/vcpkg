@@ -266,8 +266,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv libintl libpcre
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/sed-4.8-2-x86_64.pkg.tar.zst"
-        SHA512 8391be777239e0bfc19dc477995ee581ea9dbb1ba34fc27f57ba9d858e7489ac9b7200479d405712b43fa88434dd597be71d161fa8c05606e7ef991711bfc4c1
+        URL "https://repo.msys2.org/msys/x86_64/sed-4.9-1-x86_64.pkg.tar.zst"
+        SHA512 8006a83f0cc6417e3f23ffd15d0cbca2cd332f2d2690232a872ae59795ac63e8919eb361111b78f6f2675c843758cc4782d816ca472fe841f7be8a42c36e8237
         DEPS libintl
     )
     z_vcpkg_acquire_msys_declare_package(
