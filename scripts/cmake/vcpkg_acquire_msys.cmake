@@ -374,8 +374,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libintl libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libintl-0.21-1-x86_64.pkg.tar.zst"
-        SHA512 be0242eed25793e86e0560868f76cf06a358ffc0b2beb357e776d6c7819e545ac90f9358b17a85aa598584babe3ab4bb4544e360a28f5cec965f314178b930d1
+        URL "https://repo.msys2.org/msys/x86_64/libintl-0.22-2-x86_64.pkg.tar.zst"
+        SHA512 0920338683458ce97fa7ab67529e3507b0d441922417fa2296c96d830b89c714b8df3e83bb88e1336cbf724d06cdef820d0e0867cf6509c88fe069e4f3bfdec2
         DEPS libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
