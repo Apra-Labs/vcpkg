@@ -369,8 +369,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/findutils-4.9.0-2-x86_64.pkg.tar.zst"
-        SHA512 71d315c081bc9dea5e56f0022b7d38b358eb14a76ff8a2f0d72ab2bf5747a60921d303542beed175ee9e04f2d224026b54cfe49e0337978d2554f58c7d7df97a
+        URL "https://repo.msys2.org/msys/x86_64/findutils-4.9.0-3-x86_64.pkg.tar.zst"
+        SHA512 1538733929ecc11bc7c19797577e4cd59cc88499b375e3c2ea4a8ed4d66a1a02f4468ff916046c76195ba92f4c591d0e351371768117a423595d2e43b3321aad
         DEPS libintl libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
