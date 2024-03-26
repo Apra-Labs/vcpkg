@@ -379,7 +379,7 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libiconv-1.16-2-x86_64.pkg.tar.zst"
+        URL "https://repo.msys2.org/msys/x86_64/libiconv-1.17-1-x86_64.pkg.tar.zst"
         SHA512 3ab569eca9887ef85e7dd5dbca3143d8a60f7103f370a7ecc979a58a56b0c8dcf1f54ac3df4495bc306bd44bf36ee285aaebbb221c4eebfc912cf47d347d45fc
         DEPS gcc-libs
     )
@@ -522,7 +522,7 @@ function(vcpkg_acquire_msys out_msys_root)
         SHA512 1d7be396ef132289be0c33792c4e81dea6cb7b1eafa249fb3e8abc0b393d14e5114905c0c0262b6a7aed8f196ae4d7a10fbafd342b08ec76c9196921332747b5
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libiconv-1.16-2-any.pkg.tar.zst"
+        URL "https://repo.msys2.org/msys/x86_64/libiconv-1.17-1-x86_64.pkg.tar.zst.sig"
         SHA512 542ed5d898a57a79d3523458f8f3409669b411f87d0852bb566d66f75c96422433f70628314338993461bcb19d4bfac4dadd9d21390cb4d95ef0445669288658
     )
     z_vcpkg_acquire_msys_declare_package(

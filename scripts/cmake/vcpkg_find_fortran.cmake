@@ -67,7 +67,7 @@ function(vcpkg_find_fortran out_var)
                         495834d72313021b7553d92a897932f5efc66a0f6f79ebeec574ecd7ddd23e0eed9aacb32601007606abb10b44ba7c7c1ccf6d3437a4338839b2d7b1792327f9
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-headers-git-9.0.0.6373.5be8fcd83-1-any.pkg.tar.zst"
                         7959ae9267306c862b8b23be2ab21498f6e7890c936feae3ec9cf5607434e87e446f7c75ff7bd975f23aa24eb1c23d6068957f6af4e8c358f5f4861db64248b8
-                        "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libiconv-1.16-2-any.pkg.tar.zst"
+                        "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libiconv-1.17-1-any.pkg.tar.zst"
                         fe48d0d3c582fee1edb178425c6daf619d86362442c729047b3c356be26491164f92be1d87950429d2faca4ed3cf76cb4aafef1af3c87b780eee85ee85a4b4c5
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-windows-default-manifest-6.4-3-any.pkg.tar.xz"
                         5b99abc55eaa74cf85ca64a9c91542554cb5c1098bc71effba9bd36242694cfd348503fcd3507fb9ba97486108c092c925e2f38cd744493386b3dc9ab28bc526
@@ -105,7 +105,7 @@ function(vcpkg_find_fortran out_var)
                         63d081fedd1f70e8d58670d4d0698535a67f04c31caf02d0b23026ac23fc5064e9423d73c79854bbce41cc99dd0b70e4137af3a609e05cdd867fdcea120d356e
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-headers-git-9.0.0.6373.5be8fcd83-1-any.pkg.tar.zst"
                         05860f2bcfacf54089b750099f9ddc52d9b4b8ae8f69028a198dfb51fab09c37a941ae551e5d361a2a11302d48bd4fa95c44131ddee4c1df5a14f28013398f63
-                        "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libiconv-1.16-2-any.pkg.tar.zst"
+                        "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libiconv-1.17-1-any.pkg.tar.zst"
                         542ed5d898a57a79d3523458f8f3409669b411f87d0852bb566d66f75c96422433f70628314338993461bcb19d4bfac4dadd9d21390cb4d95ef0445669288658
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-windows-default-manifest-6.4-3-any.pkg.tar.xz"
                         77d02121416e42ff32a702e21266ce9031b4d8fc9ecdb5dc049d92570b658b3099b65d167ca156367d17a76e53e172ca52d468e440c2cdfd14701da210ffea37
