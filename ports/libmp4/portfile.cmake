@@ -4,7 +4,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO Apra-Labs/libmp4
     REF 1dbad6b6690f7b4a9d8cbfafa91a5e305c58331a
-    SHA512 91f6a1fb8ef4a9313f653e17dfe3713476454d0b2a288a0fcbfb9e6e2edd2972f38045afe17606d18d7ecd6834347d2f60aa0671e2d1ed3911f66fa6b367be53
+    SHA512 d290ee15b9df189f081b980eceb2deb1687de159580ceacda23def5f3f7f938e014c2e9935e3a82f643d566e985bca0cc3ea22fd1558aecc50aa33794061ba2a
     HEAD_REF forApraPipes
 )
 vcpkg_configure_cmake(
