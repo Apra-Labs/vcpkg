@@ -27,7 +27,7 @@ Vcpkg helps you manage C and C++ libraries on Windows, Linux and MacOS. This too
 - [Host Dependencies](users/host-dependencies.md)
 - [Using Registries](users/registries.md)
 
-### Maintainer Help
+### Maintainer Help 
 
 - [Manifest files - vcpkg.json](maintainers/manifest-files.md)
 - [Control files](maintainers/control-files.md)
