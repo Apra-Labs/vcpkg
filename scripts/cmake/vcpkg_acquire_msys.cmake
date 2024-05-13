@@ -256,8 +256,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/coreutils-8.32-2-x86_64.pkg.tar.zst"
-        SHA512 0719e8d3683711453ff77496cad11583e877ea52806e5ea3f470444705705db20a8a9fe99987166b02c6bd240c06c7d86faa979a7bc5536c9c804d800b60b7be
+        URL "https://repo.msys2.org/msys/x86_64/coreutils-8.32-4-x86_64.pkg.tar.zst"
+        SHA512 66A4BB0D7C57C562A6F9FB6124AEF01CB9441D884BB90988E578F345600BB2F9A82EC7440823FD91B3E6C65B811328E6206D9F1D1118E92A2445A444E4D6B220
         DEPS libiconv libintl gmp
     )
     z_vcpkg_acquire_msys_declare_package(
