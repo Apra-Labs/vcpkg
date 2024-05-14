@@ -188,8 +188,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libbz2
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libbz2-1.0.8-3-x86_64.pkg.tar.zst"
-        SHA512 955420cabd45a02f431f5b685d8dc8acbd07a8dcdda5fdf8b9de37d3ab02d427bdb0a6d8b67c448e307f21094e405e916fd37a8e9805abd03610f45c02d64b9e
+        URL "https://repo.msys2.org/msys/x86_64/libbz2-1.0.8-4-x86_64.pkg.tar.zst"
+        SHA512 5A7BE6D04E55E6FB1DC0770A8C020CA24A317807C8C8A4813146CD5D559C12A6C61040797B062E441645BC2257B390E12DD6DF42519E56278A1FE849FE76A1C4
     )
     z_vcpkg_acquire_msys_declare_package(
         URL "https://repo.msys2.org/msys/x86_64/patch-2.7.6-1-x86_64.pkg.tar.xz"
@@ -251,8 +251,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libbz2-1.0.8-3-x86_64.pkg.tar.zst"
-        SHA512 955420cabd45a02f431f5b685d8dc8acbd07a8dcdda5fdf8b9de37d3ab02d427bdb0a6d8b67c448e307f21094e405e916fd37a8e9805abd03610f45c02d64b9e
+        URL "https://repo.msys2.org/msys/x86_64/libbz2-1.0.8-4-x86_64.pkg.tar.zst"
+        SHA512 5A7BE6D04E55E6FB1DC0770A8C020CA24A317807C8C8A4813146CD5D559C12A6C61040797B062E441645BC2257B390E12DD6DF42519E56278A1FE849FE76A1C4
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -379,8 +379,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libiconv-1.16-2-x86_64.pkg.tar.zst"
-        SHA512 3ab569eca9887ef85e7dd5dbca3143d8a60f7103f370a7ecc979a58a56b0c8dcf1f54ac3df4495bc306bd44bf36ee285aaebbb221c4eebfc912cf47d347d45fc
+        URL "https://repo.msys2.org/msys/x86_64/libiconv-1.17-1-x86_64.pkg.tar.zst"
+        SHA512 E8FC6338D499CCF3A143B3DBDB91838697DE76E1C9582BB44B0F80C1D2DA5DCFE8102B7512EFA798C5409BA9258F4014EB4ECCD24A9A46D89631C06AFC615678
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
