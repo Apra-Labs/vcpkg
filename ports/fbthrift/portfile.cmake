@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO facebook/fbthrift
     REF "v${VERSION}"
-    SHA512 5c392089c3a59e320a3d2940ffb58da629d5587b0399c26eb0cb637ee5fa9e4f36fa8276e2e0e7d545c8b82c334935cf377da705fba39e0c71e7d543bc0aa916
+    SHA512 b4d42b9383b8587e58776e0dd7aab531fc5986d748a2b5d256fa3059a7f717697dfc0ca98f6947d4d9115b6f641a6bba1ff06a283225b87faac2c457ebff5cd6
     HEAD_REF main
     PATCHES 
         fix-glog.patch
@@ -36,6 +36,7 @@ file(REMOVE_RECURSE
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/frozen/test"
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/protocol/test"
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/reflection/docs"
+    "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/runtime/test"
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/security/extensions/test"
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/security/test"
     "${CURRENT_PACKAGES_DIR}/include/thrift/lib/cpp2/server/test"
@@ -69,7 +70,7 @@ if(EXISTS "${CURRENT_PACKAGES_DIR}/share/fbthrift/FBThriftConfig.cmake")
 endif()
 
 # Only used internally and removed in master
-vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/share/fbthrift/FBThriftTargets.cmake" "LOCATION_HH=\\\"${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel/thrift/compiler/location.hh\\\"" "")
+vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/share/fbthrift/FBThriftTargets.cmake" "LOCATION_HH=\\\"${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel/thrift/compiler/location.hh\\\"" "" IGNORE_UNCHANGED)
 
 # Handle copyright
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
