@@ -1,0 +1,9 @@
+{
+  "name": "tritonclient",
+  "version": "1.0",
+  "description": "its a client",
+  "homepage": "https://github.com/triton-inference-server/client",
+  "dependencies": [
+      "rapidjson"
+  ]
+}
