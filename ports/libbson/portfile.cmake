@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO mongodb/mongo-c-driver
     REF "${VERSION}"
-    SHA512 b22fd88084e0fead31faf47b505d7e38dff20e0b65c18f38c2d089807d2ed4a28f23d02fc429e80b0c3ef1bdd5f653b2399701389b3a29d305d96e99bebc3943
+    SHA512 6cd5bdd487d84f2f3c9224266e83055bb3b9359205526b9da89813f9c5690c8b6cccb91e4a63473455eea929f831b6f561d894aa429c01ee3dbd6694667be89a
     HEAD_REF master
     PATCHES
         fix-include-directory.patch # vcpkg legacy decision
@@ -25,7 +25,6 @@ vcpkg_cmake_configure(
         "-DBUILD_VERSION=${VERSION}"
         -DENABLE_BSON=ON
         -DENABLE_EXAMPLES=OFF
-        -DENABLE_ICU=OFF
         -DENABLE_MONGOC=OFF
         -DENABLE_SASL=OFF
         -DENABLE_SNAPPY=OFF
@@ -34,14 +33,12 @@ vcpkg_cmake_configure(
         -DENABLE_STATIC=${ENABLE_STATIC}
         -DENABLE_SHARED=${ENABLE_SHARED}
         -DENABLE_TESTS=OFF
+        -DBUILD_TESTING=OFF
         -DENABLE_UNINSTALL=OFF
         -DENABLE_ZLIB=SYSTEM
         -DENABLE_ZSTD=OFF
-        -DCMAKE_DISABLE_FIND_PACKAGE_Python=ON
-        -DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON
-    MAYBE_UNUSED_VARIABLES
-        ENABLE_ICU
 )
+
 vcpkg_cmake_install()
 vcpkg_copy_pdbs()
 vcpkg_fixup_pkgconfig()

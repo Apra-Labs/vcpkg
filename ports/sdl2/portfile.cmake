@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO libsdl-org/SDL
     REF "release-${VERSION}"
-    SHA512 1df251333904c8530736a04cd699bcb2b786ad4bcb50e4d67e30cf7e857a46d60aeb48ebea8670f8aecc5632b3cfe635499721ed0cd72f6c8330d5e8ad32aacc
+    SHA512 c3bbec85835e7f50662c408d220b0706d4247738472cb93fe44341d9cc81093988ac34993b43e2e4178969381d6097a1f401be97476deaec9f0dded01e7e11a1
     HEAD_REF main
     PATCHES
         deps.patch
@@ -17,6 +17,7 @@ string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "static" FORCE_STATIC_VCRT)
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
         alsa     SDL_ALSA
+        dbus     SDL_DBUS
         ibus     SDL_IBUS
         samplerate SDL_LIBSAMPLERATE
         vulkan   SDL_VULKAN
@@ -105,15 +106,6 @@ if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug" AND NOT VCP
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/debug/lib/pkgconfig/sdl2.pc" "-lSDL2main" "-lSDL2maind" IGNORE_UNCHANGED)
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/debug/lib/pkgconfig/sdl2.pc" "-lSDL2 " "-lSDL2d " IGNORE_UNCHANGED)
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/debug/lib/pkgconfig/sdl2.pc" "-lSDL2-static " "-lSDL2-staticd " IGNORE_UNCHANGED)
-endif()
-
-if(VCPKG_LIBRARY_LINKAGE STREQUAL "dynamic" AND VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
-    if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "release")
-        vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/lib/pkgconfig/sdl2.pc" "-lSDL2-static " " ")
-    endif()
-    if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug")
-        vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/debug/lib/pkgconfig/sdl2.pc" "-lSDL2-staticd " " ")
-    endif()
 endif()
 
 if(VCPKG_TARGET_IS_UWP)

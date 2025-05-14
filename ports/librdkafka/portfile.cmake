@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO confluentinc/librdkafka
     REF "v${VERSION}"
-    SHA512 a68b7382ec5a9afc0eb8513e97d8563c599021d774f7790a61af80565600678a497e4957dcdd823f8b9a426a19b9c5392cacd42d02d70493d993319f3343fe96
+    SHA512 0ded25a7a9786cc82aaae33e50280437718ac2f6ffe11a8d2af78f999c5af82398e8f1adc332f0cfa37f548209d4e0f26de80e115ad696b45fe5117f03f89b63
     HEAD_REF master
     PATCHES
         lz4.patch
@@ -12,13 +12,14 @@ string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "static" RDKAFKA_BUILD_STATIC)
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
+        curl    WITH_CURL
+        sasl    WITH_SASL
+        sasl    WITH_SASL_CYRUS
         ssl     WITH_SSL
         ssl     WITH_SASL_OAUTHBEARER
         ssl     WITH_SASL_SCRAM
         zlib    WITH_ZLIB
         zstd    WITH_ZSTD
-        snappy  WITH_SNAPPY
-        curl    WITH_CURL
 )
 
 vcpkg_cmake_configure(

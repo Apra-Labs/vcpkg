@@ -2,10 +2,22 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO odygrd/quill
     REF v${VERSION}
-    SHA512 d8bda35da910c364566cd41cd8011542d62ddbb5d81d89668ccec6bb02b8bc5761b47f52a0111e0175a4ced50a34270fc913ac904d13311ffacf3c00cc471007
+    SHA512 cf1be6d731c6d6c95929cc07c9dd4ac6031ecb6dbda9f161f8df44c9416ddfc4e64916e241e0c97341cc59f46276dce6a47c0996634712668bb044ededc0a610
     HEAD_REF master
 )
 
-file(COPY ${SOURCE_PATH}/quill/include/ DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+if(VCPKG_TARGET_IS_ANDROID)
+    set(ADDITIONAL_OPTIONS -DQUILL_NO_THREAD_NAME_SUPPORT=ON)
+endif()
+
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" OPTIONS ${ADDITIONAL_OPTIONS})
+
+vcpkg_cmake_install()
+
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/quill)
+
+vcpkg_fixup_pkgconfig()
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")

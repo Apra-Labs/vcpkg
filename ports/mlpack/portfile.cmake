@@ -3,13 +3,15 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO mlpack/mlpack
     REF "${VERSION}"
-    SHA512 6b7c16190fa5106dde76cbedddc42ed0a4a97fcc606dc0b962744fdc812ac81f59a21b6cf071e3a8661c58cb9de2654a4eabd03c4f44d6091f99175887735c41
+    SHA512 c615e47319dd9e777ab23a1f0898d49e6974c4c097c7271c97702648ba03152f9320a74b4cf3d4b8d3f403c416715859ef8e70687b22455ca07e934f2645c013
     HEAD_REF master
 )
 
 # Copy the header files
-file(GLOB HEADERS "${SOURCE_PATH}/src/*.hpp"  "${SOURCE_PATH}/src/mlpack/*.hpp")
-file(COPY ${HEADERS} DESTINATION "${CURRENT_PACKAGES_DIR}/include/mlpack")
+file(GLOB HEADERS_SRC "${SOURCE_PATH}/src/*.hpp")
+file(GLOB HEADERS_MLPACK "${SOURCE_PATH}/src/mlpack/*.hpp")
+file(COPY ${HEADERS_SRC} DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+file(COPY ${HEADERS_MLPACK} DESTINATION "${CURRENT_PACKAGES_DIR}/include/mlpack")
 file(COPY "${SOURCE_PATH}/src/mlpack/methods/" DESTINATION "${CURRENT_PACKAGES_DIR}/include/mlpack/methods")
 file(COPY "${SOURCE_PATH}/src/mlpack/core/" DESTINATION "${CURRENT_PACKAGES_DIR}/include/mlpack/core")
 

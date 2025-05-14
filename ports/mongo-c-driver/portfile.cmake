@@ -3,15 +3,19 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO mongodb/mongo-c-driver
     REF "${VERSION}"
-    SHA512 b22fd88084e0fead31faf47b505d7e38dff20e0b65c18f38c2d089807d2ed4a28f23d02fc429e80b0c3ef1bdd5f653b2399701389b3a29d305d96e99bebc3943
+    SHA512 6cd5bdd487d84f2f3c9224266e83055bb3b9359205526b9da89813f9c5690c8b6cccb91e4a63473455eea929f831b6f561d894aa429c01ee3dbd6694667be89a
     HEAD_REF master
     PATCHES
         disable-dynamic-when-static.patch
         fix-dependencies.patch
         fix-include-directory.patch
         fix-mingw.patch
+        remove_abs_patch.cmake
 )
 file(WRITE "${SOURCE_PATH}/VERSION_CURRENT" "${VERSION}")
+file(TOUCH "${SOURCE_PATH}/src/utf8proc-editable")
+file(GLOB vendored_libs "${SOURCE_PATH}/src/utf8proc-*" "${SOURCE_PATH}/src/zlib-*/*.h")
+file(REMOVE_RECURSE ${vendored_libs})
 
 # Cannot use string(COMPARE EQUAL ...)
 set(ENABLE_STATIC OFF)
@@ -55,12 +59,14 @@ vcpkg_cmake_configure(
         -DENABLE_SHM_COUNTERS=OFF
         -DENABLE_STATIC=${ENABLE_STATIC}
         -DENABLE_TESTS=OFF
+        -DBUILD_TESTING=OFF
         -DENABLE_UNINSTALL=OFF
         -DENABLE_ZLIB=SYSTEM
-        -DCMAKE_DISABLE_FIND_PACKAGE_Python=ON
-        -DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON
         "-DPKG_CONFIG_EXECUTABLE=${PKGCONFIG}"
+    MAYBE_UNUSED_VARIABLES
+        PKG_CONFIG_EXECUTABLE
 )
+
 vcpkg_cmake_install()
 vcpkg_copy_pdbs()
 
@@ -74,16 +80,16 @@ if("snappy" IN_LIST FEATURES AND VCPKG_LIBRARY_LINKAGE STREQUAL "static")
 endif()
 vcpkg_fixup_pkgconfig()
 
-vcpkg_cmake_config_fixup(PACKAGE_NAME mongoc-1.0 CONFIG_PATH "lib/cmake/mongoc-1.0" DO_NOT_DELETE_PARENT_CONFIG_PATH)
+# deprecated
+vcpkg_cmake_config_fixup(PACKAGE_NAME libmongoc-1.0 CONFIG_PATH "lib/cmake/libmongoc-1.0" DO_NOT_DELETE_PARENT_CONFIG_PATH)
 if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
+    vcpkg_cmake_config_fixup(PACKAGE_NAME libmongoc-static-1.0 CONFIG_PATH "lib/cmake/libmongoc-static-1.0" DO_NOT_DELETE_PARENT_CONFIG_PATH)
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/include/mongoc/mongoc-macros.h"
         "#define MONGOC_MACROS_H" "#define MONGOC_MACROS_H\n#ifndef MONGOC_STATIC\n#define MONGOC_STATIC\n#endif")
-    vcpkg_cmake_config_fixup(PACKAGE_NAME libmongoc-static-1.0 CONFIG_PATH "lib/cmake/libmongoc-static-1.0")
-    file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/share/libmongoc-1.0")
-    file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/libmongoc-1.0-config.cmake" DESTINATION "${CURRENT_PACKAGES_DIR}/share/libmongoc-1.0")
-else()
-    vcpkg_cmake_config_fixup(PACKAGE_NAME libmongoc-1.0 CONFIG_PATH "lib/cmake/libmongoc-1.0")
+    vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/share/libmongoc-1.0/libmongoc-1.0-config.cmake" "mongoc_shared" "mongoc_static")
 endif()
+# recommended
+vcpkg_cmake_config_fixup(PACKAGE_NAME mongoc-1.0 CONFIG_PATH "lib/cmake/mongoc-1.0")
 
 file(REMOVE_RECURSE
     "${CURRENT_PACKAGES_DIR}/debug/include"

@@ -2,9 +2,10 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO gdraheim/zziplib
     REF "v${VERSION}"
-    SHA512 95557147d374d0e9074b83319350db9085b8ae98ff7cf7ab96a3209564597744252504adfaf4d17b0243ffb118adf2afabe7dd736e6514a7e74360cd0955e4f5
+    SHA512 bed63fa7d430bd197bb70084f28ae6edc4c4120655b882bc8367f968b32c03340bb6d9bf1b14a5fcc5a1160d91ccf00e7b1131a4123da5d52233a84840ba8b7e
     PATCHES
         no-release-postfix.patch
+        revert-pkgconfig-path.patch
 )
 
 string(COMPARE EQUAL VCPKG_CRT_LINKAGE "static" MSVC_STATIC_RUNTIME)
@@ -28,7 +29,7 @@ vcpkg_cmake_configure(
         -DZZIPWRAP=OFF
 )
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup(PACKAGE_NAME zziplib)
+vcpkg_cmake_config_fixup(CONFIG_PATH "lib/cmake/zziplib")
 vcpkg_fixup_pkgconfig()
 
 file(REMOVE_RECURSE
