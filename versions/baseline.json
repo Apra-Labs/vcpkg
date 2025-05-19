@@ -389,7 +389,8 @@
       "port-version": 0
     },
     "baresip": {
-      "baseline": "3.2.0"
+      "baseline": "3.2.0",
+      "port-version": 0
     },
     "basisu": {
       "baseline": "1.11",
@@ -825,7 +826,7 @@
     },
     "boost-modular-build-helper": {
       "baseline": "1.78.0",
-      "port-version": 2
+      "port-version": 3
     },
     "boost-move": {
       "baseline": "1.78.0",
@@ -3704,7 +3705,8 @@
       "port-version": 0
     },
     "libmp4": {
-      "baseline": "1.0"
+      "baseline": "1.0",
+      "port-version": 0
     },
     "libmpeg2": {
       "baseline": "0.5.1",
@@ -6003,7 +6005,8 @@
       "port-version": 1
     },
     "re": {
-      "baseline": "3.2.0"
+      "baseline": "3.2.0",
+      "port-version": 0
     },
     "re2": {
       "baseline": "2021-11-01",
