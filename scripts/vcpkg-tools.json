@@ -4,20 +4,20 @@
     {
       "name": "python3",
       "os": "windows",
-      "version": "3.12.7",
+      "version": "3.10.11",
       "executable": "python.exe",
-      "url": "https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-win32.zip",
-      "sha512": "15542080e0cc25c574391218107fe843006e8c5a7161d1cd48cf14a3c47155c0244587273d9c747f35b15ea17676869ecce079214824214c1a62abfc86ad9f9b",
-      "archive": "python-3.12.7-embed-win32.zip"
+      "url": "https://www.python.org/ftp/python/3.10.11/python-3.10.11-embed-amd64.zip",
+      "sha512": "40cbc98137cc7768e3ea498920ddffd0b3b30308bfd7bbab2ed19d93d2e89db6b4430c7b54a0f17a594e8e10599537a643072e08cfd1a38c284f8703879dcc17",
+      "archive": "python-3.10.11-embed-amd64.zip"
     },
     {
       "name": "python3_with_venv",
       "os": "windows",
-      "version": "3.12.7",
+      "version": "3.10.11",
       "executable": "tools/python.exe",
-      "url": "https://www.nuget.org/api/v2/package/python/3.12.7",
-      "sha512": "6d5cac329808e31d4d8d593da6eeaa9ea4ec0296679335e7b7811f6c6fa6cbb96948d2f7845071798c6f73f83852dd731dc2b0fda48c520b9bec8a86cc56134e",
-      "archive": "python-3.12.7.nupkg.zip"
+      "url": "https://www.nuget.org/api/v2/package/python/3.10.11",
+      "sha512": "23a600c0bb647698802da679200ff44c08f4d82b939e109933681a59f9f5dd30d2caf3ee09118a97598019b6e4d07bd79ffdea2139405a379bc0ab259178f950",
+      "archive": "python-3.10.11.nupkg.zip"
     },
     {
       "name": "cmake",
