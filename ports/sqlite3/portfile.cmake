@@ -3,8 +3,8 @@ string(REGEX REPLACE "^([0-9]+),0*([0-9][0-9]),0*([0-9][0-9]),0*([0-9][0-9])," "
 
 vcpkg_download_distfile(ARCHIVE
     URLS "https://sqlite.org/2025/sqlite-autoconf-${SQLITE_VERSION}.tar.gz"
-    FILENAME "sqlite-autoconf-${SQLITE_VERSION}.zip"
-    SHA512 59bbed0f49bcc17abcc3ba180858c7a7128038e43fd0b24a786505f0223340f85eb956e64a2b66e245d0b8d0769daa5e4688ae4686c64fc8ff91c546acce0070
+    FILENAME "sqlite-autoconf-${SQLITE_VERSION}.tar.gz"
+    SHA512 44aec8688ed017f694854fed9250cdeb68c853e74b0e0f78d5e3ccb271dde5c1dbed701fba188489e4f220c969c9ed61dc328242e39829ed151d185d7b58829b
 )
 
 vcpkg_extract_source_archive(
@@ -93,6 +93,9 @@ configure_file(
     "${CURRENT_PACKAGES_DIR}/share/unofficial-${PORT}/unofficial-sqlite3-config.cmake"
     @ONLY
 )
+if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
+    configure_file("${CURRENT_PORT_DIR}/vcpkg-cmake-wrapper.cmake" "${CURRENT_PACKAGES_DIR}/share/${PORT}/vcpkg-cmake-wrapper.cmake" @ONLY)
+endif()
 
 vcpkg_fixup_pkgconfig()
 vcpkg_copy_pdbs()
