@@ -116,6 +116,10 @@
           "features": [
             "contrib"
           ]
+        },
+        {
+          "name": "pthreads",
+          "platform": "windows"
         }
       ]
     },
